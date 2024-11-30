@@ -2,17 +2,6 @@
 /build/
 out/
 
-# Dependencias de Maven
-/.mvn/
-/target/
-dependency-reduced-pom.xml
-mvnw*
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-
 # Configuración de IDEs
 # IntelliJ IDEA
 /.idea/
