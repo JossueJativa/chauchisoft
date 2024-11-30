@@ -6,15 +6,12 @@ import lombok.*;
 
 @Entity
 @Getter @Setter
-public class Categoria {
+public class Categoria {   
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(length = 32)
-    @GeneratedValue(generator = "system-uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
-    String oid;
+    Long oid;
 
     @Column(length=50)
     @Required

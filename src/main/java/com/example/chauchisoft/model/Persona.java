@@ -6,8 +6,6 @@ import org.openxava.annotations.*;
 
 import lombok.*;
 
-import java.util.Collection;
-
 @MappedSuperclass
 @Getter @Setter
 abstract public class Persona {
@@ -33,7 +31,7 @@ abstract public class Persona {
     @Required
     String cedula;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="persona")
+    @ManyToOne(fetch=FetchType.LAZY)
     @DescriptionsList
-    Collection<Productos> productos;
+    private Productos product;
 }

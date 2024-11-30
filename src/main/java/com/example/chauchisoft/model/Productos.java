@@ -2,6 +2,7 @@ package com.example.chauchisoft.model;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 
 import lombok.*;
@@ -9,14 +10,12 @@ import lombok.*;
 @Entity
 @Getter @Setter
 public class Productos {
+    @Id
     @Column(length = 32)
     @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Hidden
     String oid;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Column(length=50)
     @Required
@@ -34,7 +33,7 @@ public class Productos {
     @Required
     String descripcion;
 
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
-    @Required
-    Categoria categoria;
+    @DescriptionsList
+    @ManyToOne
+    private Categoria categoria;
 }
