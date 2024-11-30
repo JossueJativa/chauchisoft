@@ -1,0 +1,6 @@
+com\example\chauchisoft\model\Categoria.class
+com\example\chauchisoft\model\Vendedor.class
+com\example\chauchisoft\model\Inventario.class
+com\example\chauchisoft\run\chauchisoft.class
+com\example\chauchisoft\model\Persona.class
+com\example\chauchisoft\model\Productos.class

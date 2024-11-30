@@ -6,9 +6,12 @@ import org.openxava.annotations.*;
 
 import lombok.*;
 
-@Entity
+import java.util.Collection;
+
+@MappedSuperclass
 @Getter @Setter
-public class Persona {
+abstract public class Persona {
+    @Id
     @Column(length = 32)
     @GeneratedValue(generator = "system-uuid")
     @Hidden
@@ -30,7 +33,7 @@ public class Persona {
     @Required
     String cedula;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="persona")
     @DescriptionsList
-    Productos productos;
+    Collection<Productos> productos;
 }

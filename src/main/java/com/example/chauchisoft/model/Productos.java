@@ -14,6 +14,10 @@ public class Productos {
     @Hidden
     String oid;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(length=50)
     @Required
     String nombre;
@@ -30,7 +34,7 @@ public class Productos {
     @Required
     String descripcion;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @Required
     Categoria categoria;
 }

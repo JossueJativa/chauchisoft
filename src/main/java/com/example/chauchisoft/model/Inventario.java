@@ -2,6 +2,7 @@ package com.example.chauchisoft.model;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 
 import lombok.*;
@@ -9,8 +10,10 @@ import lombok.*;
 @Entity
 @Getter @Setter
 public class Inventario {
-    @Column(length = 32)
+    @Id
     @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(length = 32)
     @Hidden
     String oid;
 
