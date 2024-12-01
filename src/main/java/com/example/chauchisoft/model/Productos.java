@@ -36,4 +36,8 @@ public class Productos {
     @DescriptionsList
     @ManyToOne
     private Categoria categoria;
+
+    @ManyToOne
+    @Required
+    private Vendedor vendedor;
 }

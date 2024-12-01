@@ -2,6 +2,7 @@ package com.example.chauchisoft.model;
 
 import java.util.Date;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.PrePersist;
@@ -31,6 +32,9 @@ public class Vendedor extends Persona {
     @DateTime
     @Required
     Date fechaNacimiento;
+
+    @OneToMany(mappedBy = "vendedor")
+    private List<Productos> productos;
 
     public boolean isOlderThan18() {
         Calendar calendar = Calendar.getInstance();

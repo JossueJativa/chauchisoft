@@ -30,8 +30,4 @@ abstract public class Persona {
     @Column(length=50)
     @Required
     String cedula;
-
-    @ManyToOne(fetch=FetchType.LAZY)
-    @DescriptionsList
-    private Productos product;
 }
