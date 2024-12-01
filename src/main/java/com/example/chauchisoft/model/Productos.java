@@ -8,7 +8,6 @@ import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity
-@Table(name = "productos")
 @Getter @Setter
 public class Productos {
     @Id
@@ -41,7 +40,4 @@ public class Productos {
     @ManyToOne
     @Required
     private Vendedor vendedor;
-
-    @ManyToOne
-    private Cliente cliente;
 }

@@ -8,7 +8,6 @@ import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity
-@Table(name = "inventarios")
 @Getter @Setter
 public class Inventario {
     @Id
