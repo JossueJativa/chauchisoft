@@ -9,12 +9,6 @@ import lombok.*;
 @MappedSuperclass
 @Getter @Setter
 abstract public class Persona {
-    @Id
-    @Column(length = 32)
-    @GeneratedValue(generator = "system-uuid")
-    @Hidden
-    String oid;
-
     @Column(length=50)
     @Required
     String nombre;

@@ -8,6 +8,7 @@ import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity
+@Table(name = "productos")
 @Getter @Setter
 public class Productos {
     @Id
@@ -23,7 +24,7 @@ public class Productos {
 
     @Column(length=50)
     @Required
-    String precio;
+    double precio;
 
     @Files
     @Column(length = 32)
@@ -40,4 +41,7 @@ public class Productos {
     @ManyToOne
     @Required
     private Vendedor vendedor;
+
+    @ManyToOne
+    private Cliente cliente;
 }
