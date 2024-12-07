@@ -40,4 +40,16 @@ public class Productos {
     @ManyToOne
     @Required
     private Vendedor vendedor;
+
+    private boolean isPriceValid(double price) {
+        return price > 0;
+    }
+
+    @PrePersist
+    @PreUpdate
+    private void validatePrice() {
+        if (!isPriceValid(precio)) {
+            throw new IllegalArgumentException("El precio debe ser mayor a 0");
+        }
+    }
 }
