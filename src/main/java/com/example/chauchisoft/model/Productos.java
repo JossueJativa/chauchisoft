@@ -5,6 +5,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 
+import com.example.chauchisoft.calculadores.CalculadoraGanancia;
+
 import lombok.*;
 
 @Entity
@@ -24,6 +26,18 @@ public class Productos {
     @Column(length=50)
     @Required
     double precio;
+
+    @Column(length = 50)
+    @Required
+    double porcentageGanancia;
+
+    @Column(length = 50)
+    @Required
+    @DefaultValueCalculator(value = CalculadoraGanancia.class, properties = {
+            @PropertyValue(name = "precio", from = "precio"),
+            @PropertyValue(name = "porcentageGanancia", from = "porcentageGanancia")
+    })
+    double gananciaCalculada;
 
     @Files
     @Column(length = 32)
